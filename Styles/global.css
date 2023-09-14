@@ -1,3 +1,5 @@
+@import url('./user.css');
+
 * {
   margin: 0;
   padding: 0;
@@ -37,6 +39,10 @@ body {
 
     padding: 0 24 px;
     margin: 160px auto 100px;
+}
+
+section {
+  height: 400px;
 }
 
 .projects {
