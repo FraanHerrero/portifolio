@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <!-- CSS Bootstrap 3 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Biblioteca do Sweetalert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Estilos da página -->
+    <style>
+        .tema-escuro {
+            background-color: black;
+            color: white;
+        }
+
+        #resultado {
+            font-weight: bold;
+        }
+    </style>
+
+    <script src="calculadora.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora</h1>
+        <div class="form-group">
+            <label for="num1">Número 1:</label>
+            <input type="number" class="form-control" id="num1" oninput="limparErro('num1')">
+            <small class="text-danger" id="num1-error"></small>
+        </div>
+        <div class="form-group">
+            <label for="num2">Número 2:</label>
+            <input type="number" class="form-control" id="num2" oninput="limparErro('num2')">
+            <small class="text-danger" id="num2-error"></small>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" onclick="somar()">Somar</button>
+            <button class="btn btn-primary" onclick="subtrair()">Subtrair</button>
+            <button class="btn btn-primary" onclick="multiplicar()">Multiplicar</button>
+            <button class="btn btn-primary" onclick="dividir()">Dividir</button>
+            <button class="btn btn-danger" onclick="confirmarLimpeza()">Limpar</button>
+        </div>
+        <div class="form-group">
+            <label for="result">Resultado:</label>
+            <input type="text" class="form-control" id="resultado" readonly>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-info" onclick="alterarTema()">Alternar Tema</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora IMC</title>
+    <!-- CSS Bootstrap 3 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Biblioteca do Sweetalert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Estilos da página -->
+    <style>
+        .tema-escuro {
+            background-color: black;
+            color: white;
+        }
+
+        #resultado {
+            font-weight: bold;
+        }
+    </style>
+
+    <script src="imc.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculo IMC</h1>
+        <div class="form-group">
+            <label for="altura">Altura (metros):</label>
+            <input type="number" step="0.01" class="form-control" id="altura" oninput="limparErro('altura')">
+            <small class="text-danger" id="altura-error"></small>
+        </div>
+        <div class="form-group">
+            <label for="peso">Peso (kg):</label>
+            <input type="number" step="0.01" class="form-control" id="peso" oninput="limparErro('peso')">
+            <small class="text-danger" id="peso-error"></small>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" onclick="calcularIMC()">Calcular IMC</button>
+            <button class="btn btn-info" onclick="confirmarLimpeza()">Limpar Dados</button>
+        </div>
+        <div class="form-group">
+            <label for="resultado">Resultado:</label>
+            <input type="text" class="form-control" id="resultado" readonly>
+        </div>
+        <div class="form-group">
+            <label for="classificacao">Classificação:</label>
+            <input type="text" class="form-control" id="classificacao" readonly>
+        </div>       
+        <div class="form-group">
+            <button class="btn btn-info" onclick="alterarTema()">Alternar para Escuro</button>
+        </div>
+    </div>
+</body>
+</html>
